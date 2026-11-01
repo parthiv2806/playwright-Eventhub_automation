@@ -1,0 +1,29 @@
+{
+  "name": "playwright-eventhub_automation",
+  "version": "1.0.0",
+  "description": "Playwright automation suite for the EventHub practice application",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parthiv2806/playwright-Eventhub_automation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parthiv2806/playwright-Eventhub_automation/issues"
+  },
+  "homepage": "https://github.com/parthiv2806/playwright-Eventhub_automation#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.6"
+  }
+}

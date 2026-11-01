@@ -1,0 +1,22 @@
+{
+  "Validlogin": {
+    "username": "prachi@gmail.com",
+    "password": "Test@1234"
+  },
+  "emptyEmailAndPassword": {
+    "username": "",
+    "password": ""
+  },
+  "Onlyemil": {
+    "username": "prachi@gmail.com",
+    "password": ""
+  },
+  "OnlyPassword": {
+    "username": "",
+    "password": "Test@1234"
+  },
+  "errors": {
+    "email": "Enter a valid email",
+    "password": "Password must be at least 6 characters"
+  }
+}
