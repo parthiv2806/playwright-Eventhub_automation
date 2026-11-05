@@ -29,5 +29,5 @@ test("Login with only email", async ({ loginPage }) => {
 
 test("Login with only Password", async ({ loginPage }) => {
   await loginPage.Onlypassword(login.OnlyPassword.password);
-  await loginPage.expectEmailError(login.errors.email);;
+  await loginPage.expectEmailError(login.errors.email);
 });
