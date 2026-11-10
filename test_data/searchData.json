@@ -1,0 +1,16 @@
+{
+    "searchTests": [
+        {
+            "searchValue": "Delhi"
+        },
+        {
+            "searchValue": "Mumbai"
+        },
+        {
+            "searchValue": "Ahmedabad"
+        },
+        {
+            "searchValue": "XYZ123"
+        }
+    ]
+}

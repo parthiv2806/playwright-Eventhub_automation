@@ -10,6 +10,14 @@ export class Event_page {
       { exact: true },
     );
     this.eventCards = page.getByTestId("event-card");
+    this.searchInput = page.getByPlaceholder(/Search events, venues/);
+    this.searchResults = page.getByTestId("event-card");
+    this.noResultsMessage = page.getByRole("heading", {
+      name: "No events found",
+    });
+    this.noResultsHint = page.getByText(
+      "Try adjusting your filters or search terms to find what you're looking for.",
+    );
   }
 
   async Events() {
@@ -37,5 +45,29 @@ export class Event_page {
       console.log(`Event ${i + 1}:`);
       console.log(cardText);
     }
+  }
+  async searchData(value) {
+    await this.searchInput.fill(value);
+
+    await this.page.waitForURL(
+      `**/events?search=${encodeURIComponent(value)}`,
+    );
+
+    return await this.searchInput.inputValue();
+  }
+
+  // Get All Search Results
+  async getSearchResults() {
+    await expect(
+      this.searchResults.first().or(this.noResultsMessage),
+    ).toBeVisible();
+
+    return await this.searchResults.allTextContents();
+  }
+
+  async expectNoResultsMessage() {
+    await expect(this.noResultsMessage).toBeVisible();
+    await expect(this.noResultsHint).toBeVisible();
+    await expect(this.searchResults).toHaveCount(0);
   }
 }
